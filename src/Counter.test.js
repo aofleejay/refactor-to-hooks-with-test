@@ -5,7 +5,7 @@ import CounterClass from './CounterClass'
 import CounterHooks from './CounterHooks'
 
 describe('test behavior', () => {
-  test('test class component counter', () => {
+  test('test counter component that use class component', () => {
     const { getByText } = render(<CounterClass />)
     const incrementButton = getByText('+')
     const decrementButton = getByText('-')
@@ -19,7 +19,7 @@ describe('test behavior', () => {
     expect(getByText('1')).toBeInTheDocument()
   })
 
-  test('test functional component with hooks', () => {
+  test('test counter component that use functional component with hooks', () => {
     const { getByText } = render(<CounterHooks />)
     const incrementButton = getByText('+')
     const decrementButton = getByText('-')
@@ -35,7 +35,7 @@ describe('test behavior', () => {
 })
 
 describe.skip('test implementation detail (should not do this)', () => {
-  test('should not do this', () => {
+  test('test counter component that use class component', () => {
     const wrapper = shallow(<CounterClass />)
     const incrementButton = wrapper.find('#increment-button')
     const decrementButton = wrapper.find('#decrement-button')
@@ -49,7 +49,7 @@ describe.skip('test implementation detail (should not do this)', () => {
     expect(wrapper.state().counter).toBe(1)
   })
 
-  test('should not do this', () => {
+  test('test counter component that use functional component with hooks', () => {
     const wrapper = shallow(<CounterHooks />)
     const incrementButton = wrapper.find('#increment-button')
     const decrementButton = wrapper.find('#decrement-button')
