@@ -2,7 +2,7 @@ We know that we can use state in functional component by using React Hooks. That
 
 So if our test look like this i think it's okay because the test doesn't know about React API.
 
-```
+```jsx
 test('test counter component that use functional component with hooks', () => {
   const { getByText } = render(<CounterHooks />)
   const incrementButton = getByText('+')
@@ -18,9 +18,9 @@ test('test counter component that use functional component with hooks', () => {
 })
 ```
 
-But if we write test like this the test will break because we test React API (this.state).
+But if we write test like this. When we change from class component to functional component with hooks the test will break because we test React API (`expect(wrapper.state().counter).toBe(1)`).
 
-```
+```jsx
 test('test counter component that use functional component with hooks', () => {
   const wrapper = shallow(<CounterHooks />)
   const incrementButton = wrapper.find('#increment-button')
